@@ -1,0 +1,62 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body{
+	font-family: "Helvetica", "sans-serif";
+	font-size: 25px;
+	background-color: #b6d4ff;
+	font-size: 15px;
+}
+
+.produto{
+	color: #f7ecec;
+}
+.produto-item{
+	width: 30%;
+	height: 400px;
+	display: block;
+	border-radius: 8px;
+	box-shadow: 4px 4px 20px #423d3d;
+}
+
+.produto-item-1{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	background-color: #6584dc;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.IconeFacebook{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.Inputs{
+	
+
+
+}
+
+input{
+	display: inline block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%; 
+	font-size: 20px;
+}
+
+.botaozin{
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40%;
+	border-radius: 2px;
+}

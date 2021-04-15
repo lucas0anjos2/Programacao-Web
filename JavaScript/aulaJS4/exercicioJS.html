@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>aulaJavaScript4</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h3> Calcular o quadrado dos números informados pelo usuário</h3>
+
+    <fieldset>
+        <p id="teste">
+            <label>Número: </label>
+            <input type="text" id="tNumero" required> 
+        </p>
+            <input type="submit" value="Enviar" onclick="calculaQuadrado()">
+    </fieldset>
+    
+    <script>
+
+        
+
+        function calculaQuadrado(){
+            var numeros = document.getElementById("tNumero").value;
+            var x = numeros.split(",");
+            for(i = 0; i < x.length; i++){
+
+                var quadrado = parseInt(x[i]) * parseInt(x[i]);
+                var resposta = document.createElement("p");
+                resposta.innerHTML = "O quadrado do número " + x[i] + " é: " + quadrado;
+                document.getElementById("teste").appendChild(resposta);
+            }
+
+
+            
+        }
+
+
+
+
+    
+    </script>
+
+    
+
+
+
+</body>
+
+
+
+
+</html>

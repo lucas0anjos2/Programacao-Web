@@ -1,0 +1,40 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body{
+	font-family: "Helvetica", "sans-serif";
+	font-size: 25px;
+}
+
+.produto{
+	color: white;
+}
+
+.produto-item{
+	width: 33.33%;
+	height: 150px;
+	display: inline-block;
+
+}
+
+.produto-item-1{
+	background-color: orange;
+
+
+}
+
+.produto-item-2{
+	background-color: green;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.produto-item-3{
+	background-color: blue;
+	margin-left: auto;
+
+}

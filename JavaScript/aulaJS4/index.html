@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>aulaJavaScript4</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+
+    <script>
+        var frutas = ["Melancia", "Limão", "Maçã"];
+        var f = []
+        f[0] = "Melancia";
+        f[1] = "Limão";
+        f["pequenas"] = "uva";
+
+        var lista = new Array("senta", "senta", "na", "piroca");
+        lista.reverse();
+        console.log(lista);
+
+        var idades =[]
+        idades["Jéssica"] = 27;
+        idades["Mirian"] = 22;
+        idades["Daniel"] = 21;
+        idades.sort();
+
+        console.log(idades);
+
+        console.log(frutas[1]);
+        console.log(f[1]);
+        console.log(f[2]);
+        console.log(f["pequenas"]);
+        console.log(idades["Daniel"]);
+
+        console.log(typeof(idades));
+    
+        console.log("Tamanho do array idades " + idades,length);
+
+    </script>
+
+
+    <h3>Objeto</h3>
+
+    <script>
+        var carro = {
+            placa: "JOK-1522",
+            modelo: "Sedan",
+            marca: "Hyundai",
+            opcionais: {
+                arcondicionado: "SIM",
+                tetoSolar: "SIM",
+
+            }
+
+        }
+
+        console.log(carro);
+        console.log(carro.placa);
+        console.log(carro.opcionais.arcondicionado);
+
+
+    </script>
+
+        
+</body>
+
+
+</html>

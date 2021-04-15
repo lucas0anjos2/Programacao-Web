@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EXERCÍCIO 2</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <fieldset>
+        <h2>Questionário</h2>
+        <p>
+            <label>Nome: </label>
+            <input type="text" id="idNome"> 
+        </p>
+        <p>
+            <label>Idade: </label>
+            <input type="number" id="idIdade"> 
+        </p>
+        <fieldset>
+            <p>
+                <h4>Avaliação do Filme: </h4>
+                <form>
+                    <input type="radio" name="opiniao" id="idPiorou" value="ruim"> 1 - Tava ruim, tava bom, mas parece que piorou  <br> 
+                    <input type="radio" name="opiniao" id="idMaisou" value="maisoumenos"> 2 - Mais ou menos (mais ou menos) <br> 
+                    <input type="radio" name="opiniao" id="idBom" value="bom"> 3 - Benzadeus (maravilhoso) <br>
+                </form>
+            </p>
+        </fieldset>
+            <input type="submit" id="idEnviar" onclick="Cadastrar() ;limparCampos()">
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <h2>Resultados: </h2>
+        <p id="idQ1">
+            <label> Média das idades das pessoas que responderam 3 (Benzadeus): </label>
+        </p>
+
+        <p id="idQ2">
+            <label> Quantidade de pessoas que responderam 2 (Mais ou menos): </label>
+        </p>
+
+        <p id="idQ3">
+            <label> Porcentagem de pessoas que responderam 3 (Benzadeus) entre todos os espectadores analisados: </label>  
+        </p>
+    </fieldset>
+
+    <script>
+        class professor{
+            constructor(nome, idade, opiniao){
+                this.nome = nome;
+                this.idade = idade;
+                this.opiniao = opiniao;
+            }
+        }
+
+        var info = new Array();
+        contador = 0;
+
+        function Cadastrar(){
+            console.log(contador);
+            if(contador < 8){
+                var prof = new professor;
+
+                var opiniao = document.getElementsByName("opiniao");
+                for(var i = 0; i < opiniao.length; i++){
+                    if(opiniao[i].checked){
+                        prof.opiniao = opiniao[i].value;
+                    }
+                }
+
+                prof.nome = document.getElementById("idNome").value;
+                prof.idade = parseInt(document.getElementById("idIdade").value);
+
+                info.push(prof);
+                contador++;
+                console.log(info);
+
+            }else{
+                alert("Já foram cadastrados os 8 professores");
+                Analisar();
+                contador++;
+            }
+            
+        }
+
+        function limparCampos(){
+            document.getElementById("idNome").value = "";
+            document.getElementById("idIdade").value = "";
+
+            var opiniao = document.getElementsByName("opiniao");
+            for(var i = 0; i < opiniao.length; i++){
+                if(opiniao[i].checked){
+                    opiniao[i].checked = false;
+                }
+            }
+        }
+
+        function Analisar(){
+            if(contador == 8){
+                var cont1 = 0;
+                var q1 = 0;
+                var q2 = 0;
+                var q3 = 0;
+                
+                for(var i = 0; i < info.length; i++){
+                    if(info[i].opiniao == "bom"){
+                        q1 += info[i].idade;
+                        cont1++;
+                    }
+
+                    if(info[i].opiniao == "maisoumenos"){
+                        q2++;
+                    }
+
+                    if(info[i].opiniao == "bom"){
+                        q3++;
+                    }
+                }
+
+                var r1 = document.createElement("label");
+                r1.innerHTML = "A média é: " + q1/cont1 + ".";
+                document.getElementById("idQ1").appendChild(r1);
+
+                var r2 = document.createElement("label");
+                r2.innerHTML =  q2 + " pessoas.";
+                document.getElementById("idQ2").appendChild(r2);
+
+                var r3 = document.createElement("label");
+                r3.innerHTML = ((q3*100)/8 + " % das pessoas.");
+                document.getElementById("idQ3").appendChild(r3);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
